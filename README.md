@@ -1,5 +1,8 @@
 # Trabalho realizado para a disciplina de Business Intelligence
 
+## link para visualizar o dashboard online:
+https://encurtador.com.br/csJRU
+
 - Aluno: Jhamesson Henriky Amâncio
 - Professor: Juscelino Fernandes da Costa Junior
 

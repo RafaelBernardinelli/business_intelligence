@@ -1,0 +1,23 @@
+É recomendado ter um ambiente virtual criado
+
+Rode o comando pip install -r requirements.txt para instalar as dependências
+
+Após executar o scrit .ipynb, deixe o docker aberto e rode esses comandos no terminal:
+
+docker build -t lac-image -f docker/Dockerfile . 
+
+docker run -d -p 3306:3306 --name lac_container -e MYSQL_ROOT_PASSWORD=1234 lac-image
+
+docker exec -it lac_container /bin/bash
+
+mysql -u root -p
+
+a senha do root é 1234
+
+USE datawarehouse;
+
+LOAD DATA INFILE '/var/lib/mysql-files/la_reports.csv'
+INTO TABLE report
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
